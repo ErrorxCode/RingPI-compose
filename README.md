@@ -1,5 +1,5 @@
 
-# Library name (Jetpack library)
+# RingPI (Jetpack library)
 <p align="left">
   <a href="#"><img alt="Languages-Kotlin" src="https://img.shields.io/badge/Language-Kotlin-1DA1F2?style=flat-square&logo=kotlin"></a>
   <a href="#"><img alt="Version" src="https://jitpack.io/v/ErrorxCode/ExpandableCard.svg"></a>
@@ -8,11 +8,18 @@
   <a href="#"><img alt="GitHub Repo stars" src="https://img.shields.io/github/stars/ErrorxCode/ExpandableCard?style=social"></a>
   </p>
 
-> "Quote of the library"
+> "A beautiful way of displaying progress or quota"
 
-This library provides an amazing Expandable card compose which you can use to show simple information or can put your own compose inside it.
+This library provides 2 amazing progress indicator which you can use in your application with just 1 line of code.
 
-![images of the library](https://github.com/user-attachments/assets/d3f05920-a9ad-4977-a338-c765116a2248)
+
+Full ring indicator             |  Half ring indicator
+:-------------------------:|:-------------------------:
+![image](https://github.com/user-attachments/assets/0d51e9cc-b400-4e0f-8d3b-03b07d5bfdec) |  ![image](https://github.com/user-attachments/assets/e9f83422-d4d8-4c1d-a470-765a0aaca1da)
+
+
+
+
 
 ## Implementation
 
@@ -33,35 +40,22 @@ Add it in your root build.gradle at the end of repositories:
 **Step 2**. Add the dependency
 
 	dependencies {
-	        implementation 'com.github.ErrorxCode:ExpandableCard:Tag'
+	        implementation 'com.github.ErrorxCode:RingPI-compose:Tag'
 	}
  
-[![](https://jitpack.io/v/ErrorxCode/ExpandableCard.svg)](https://jitpack.io/#ErrorxCode/ExpandableCard)
+[![](https://jitpack.io/v/ErrorxCode/RingPI-compose.svg)](https://jitpack.io/#ErrorxCode/RingPI-compose)
 
 
 ## Usage/Examples
 
-#### ExpandableCard
 ```kotlin
-ExpandableCard("A beautiful landscape") {  
-  Image(  
-        painter = painterResource(R.drawable.img), contentDescription = "",  
-        contentScale = ContentScale.FillWidth,  
-        modifier = Modifier.fillMaxWidth()  
-    )  
-}
-```
-
-#### SimpleInfo card
-```kotlin
-SimpleInfoCard(  
-    "About Jetpack compose",  
-    "Jetpack Compose is Android’s......."  
-    true,  
-    "View more",  
-    {  
-	  println("View more clicked!")  
-    })
+RingProgressIndicator(
+    radius = 200,
+    colors = listOf(Color.Red,Color.Blue,Color.Green),  // If you only want one color then pass the same color in the list.
+    txtColor = Color.Black,				//options, if not stated will use gradient color
+    progress = 85,
+    isHalfRing = true  					// false for the full circular ring
+)
 ```
 
 
@@ -70,6 +64,6 @@ SimpleInfoCard(
 
 Contributions are always welcome!
 
-What you can do is you can add more customization options to it. You can anytime contact me on [instagram](https://instagram.com/x0.rahil) for any kind of help.
+What you can do is add more customization options to it. You can contact me anytime on [instagram](https://instagram.com/x0.rahil) for any help.
 
 
